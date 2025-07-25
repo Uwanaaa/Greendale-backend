@@ -47,7 +47,7 @@
 #         try:
 #             client = InferenceClient(
 #             provider="hf-inference",
-#             api_key="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",
+#             api_key="#",
 #             )
 
 #             messages = [
@@ -142,7 +142,7 @@ class MessageAPIView(APIView):
             return Response({'response': response, 'conversation_id': conversation.id}, status=status.HTTP_200_OK)
         
         try:
-            client = InferenceClient("TinyLlama/TinyLlama-1.1B-Chat-v1.0", token="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")
+            client = InferenceClient("TinyLlama/TinyLlama-1.1B-Chat-v1.0", token="#")
 
             prompt = f"<|user|>\n{user_question}\n<|assistant|>\n"
             ai_response = client.text_generation(
